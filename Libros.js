@@ -10,7 +10,7 @@ let libros = []; //Variable global, utilizable en las funcion
 para_leer = ['Caracol', 'Liebre', 'Coraline'];
 
 //Agrego los libros uno por uno.
-for (i = 0; i<= para_leer.length ;i++){
+for (i = 0; i<= para_leer.length-1 ;i++){
   libros_leidos(para_leer[i]);
 }
 
