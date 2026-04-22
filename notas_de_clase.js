@@ -100,3 +100,68 @@ console.log(a);
 //var: Tiene un scope global, utilizable en cualquier parte, redeclarable y reasignada
 //let: Alcance de bloque, no puede ser redeclarada pero si reasignada
 //const: Alcance de bloque, no puede ser redeclarada ni reasignada
+
+/*----------Clase 3 - 21/Abril/2026---------------*/
+
+//Vector: Lista ordenada de elementos, como numeros o componentes;
+//Cada elemento del vector es un componente y su posicion es importante.
+//Los vectores se pueden recorrer, modificar y otros usos.
+
+//A un vector tambien se le conoce como un 'Arreglo'
+
+
+//'.forEach()': Recorre cada elemento del arreglo y ejecuta una misma funcion para cada uno de ellos
+numeros.forEach((numero) => {console.log(numero);});
+
+
+
+//map(): Recorre cada elemento del vector pero genera un nuevo arreglo con resultados
+//que ejecute una funcion para cada elemento.
+const numerosCuadrados = numeros.map((numero) => {return numero*numero});
+console.log("Numeros cuadrados: " + numerosCuadrados);
+
+
+//'.splice(desdequeindice, cuantosElementoEliminar)': Elimina los elementos
+//apartir de la posicion 'x' (incluye a x) hasta un numero 'y' (cuenta desde x) de elementos
+
+
+
+//Objeto: Construir una cosa en digital, con sus atributos y propiedades.
+const persona = {
+    nombre: "Daniel",
+    edad: 25,
+    profesion: "Programador"
+};
+console.log("Propiedad de nombre del objeto 'Persona': " + persona.nombre); //Imprimir su atributo exacto
+
+//Agregar un nuevo atributo al objeto: objeto.nuevoAtributo = valor;
+persona.color = "Wero";
+console.log(persona);
+//Eliminar atributo de un objeto: delete objeto.atributo;
+delete persona.color;
+console.log(persona);
+//Modificar: objeto.atributo = nuevoValor;
+persona.edad = 22;
+console.log(persona);
+
+
+
+//CSS Framewok
+//Ayuda a agilizar el proceso de programacion, es reutilizable
+
+//Que es: Coleccion de herramientas, reglas y componentes qe facilitan la vida como programador
+
+//Que incluyen: Diseños, tablas, formularios, Sistemas, Estilos, etc.
+
+//Que usar: El mas usados pero mas viejo es 'Boostrap', Semantic UI, Media CSS, Foundation Network
+//, talwindcss, BULMA CSS.
+
+//Como funcionan: Tienes que copear codigo de inicializacion (o otros) html de cada framework
+//Es un codigo HTML con un link que ejecuta el framework desde el instante 0;
+//Puedes pegar tambien otros diferentes al de inicializacion, segun te convenga.
+//Al hacer esto y crear objetos html se aplicaran automaticamente los estilos;
+//Cabe destacar que hay varios sub codigos que puedes copear y pegar de la pagina
+//para lograr distintas estructuras y objetos, por lo que la de inicializacion puede ser complementada
+//con los codigos mencionados.
+//Practicamente es un CopyPaste inteligente;
+//El uso avanzado es cuando implementas palabras clave para resumir grandes bloques de CSS
