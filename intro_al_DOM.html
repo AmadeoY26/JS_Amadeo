@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<head>
+    <!---Configuraciones meta--->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!---Titulo de la pagina--->
+    <title>Mi pagina web</title>
+    <!---Descripcion de la pagina--->
+    <meta name = "description" content = "Mi pagina de comentarios">
+    <!---Link para archivo CSS--->
+    <link rel="stylesheet" href="domCSS.css">
+</head>
+
+<body>
+    <header>
+        <!---Encabezado--->
+        <h1>Seccion de comentarios</h1>
+    </header>
+    <main>
+        <button id="boton1">¡Presioname!</button>
+        <div class="cajaComentarios">
+          <label id = "labelComentario" for="comentario">Deja tu comentario:</label>
+          <textarea id="comentario" rows="4" cols="50"></textarea>
+        </div>
+
+        <br><br>
+        <button id="botonEnviar">¡Enviar comentarios!</button>
+        <br><br>
+
+        <div class="comentariosEnviados">
+            <h2>Comentarios recibidos</h2>
+            <textarea id="comentariosRecibidos" rows="100" cols="50" readonly></textarea>
+        </div>
+    </main>
+    <footer>
+    </footer>
+</body>
+
+<!--Comienzo de los comandos con JS-->
+<script>
+    //Calentamiento
+    //Cambio de texto del boton ya existente
+    let boton = document.getElementById('boton1');
+    boton.textContent="Presioname para fondo azul";
+
+    //Creacion de un nuevo boton
+    let nuevoBoton = document.createElement('button');
+    nuevoBoton.textContent="Presioname para fondo rojo";
+    document.body.appendChild(nuevoBoton);
+
+    //Agregar un evento
+    boton.addEventListener('click', function(){
+        document.body.style.backgroundColor='lightblue';
+    });
+
+    nuevoBoton.addEventListener('click', function(){
+        document.body.style.backgroundColor='red';
+    });
+
+    //Creo la logica de la caja de comentarios
+    i = 0;
+    let botonEnviar = document.getElementById('botonEnviar');
+    botonEnviar.addEventListener('click', function(){
+        let comentario = document.getElementById('comentario').value;
+        //En caso de que no se haya escrito nada, no se envia el comentario
+        if(comentario.trim() === ''){
+            alert('Por favor, escribe un comentario antes de enviarlo.');
+            return;
+        }
+        else{
+            alert('Comentario enviado');
+            let textarea = document.getElementById('comentario');
+            textarea.value='';
+            let comentariosRecibidos = document.getElementById('comentariosRecibidos');
+            i++;
+            comentariosRecibidos.value += i + '. ' +comentario + '\n';
+        }
+    });
+
+</script>
+
+</html>
